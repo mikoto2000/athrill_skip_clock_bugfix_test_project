@@ -1,0 +1,16 @@
+*.o
+*.a
+*.dump
+*.map
+*.srec
+*.syms
+*.timestamp
+
+cfg1_out*
+cfg2_out*
+offset.h
+Os_*
+atk2-sc1
+
+log.txt
+arg_sakura.txt
