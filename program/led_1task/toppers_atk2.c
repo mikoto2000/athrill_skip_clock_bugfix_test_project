@@ -16,7 +16,7 @@
  *  Copyright (C) 2011-2013 by TOSHIBA CORPORATION, JAPAN
  *  Copyright (C) 2004-2013 by Witz Corporation, JAPAN
  *
- *  上記著作権者は，以下の(1)〜(4)の条件を満たす場合に限り，本ソフトウェ
+ *  上記著作権者は，以下の(1)~(4)の条件を満たす場合に限り，本ソフトウェ
  *  ア（本ソフトウェアを改変したものを含む．以下同じ）を使用・複製・改
  *  変・再配布（以下，利用と呼ぶ）することを無償で許諾する．
  *  (1) 本ソフトウェアをソースコードの形で利用する場合には，上記の著作
@@ -67,7 +67,7 @@
 sint32 main(void);
 void busy_wait(void);
 
-TASK(led_task);
+TASK(cyclic_task);
 
 
 /*
@@ -124,12 +124,12 @@ busy_wait(void){
 
 
 /*
- *  led_task
+ *  cyclic_task
  *
  *  一定時間毎にLED1を点滅させる
  */
-TASK(led_task){
-    syslog(LOG_INFO, "led_task Start!");
+TASK(cyclic_task){
+    syslog(LOG_INFO, "cyclic_task Start!");
 
     TerminateTask();
-}	/* TASK( led_task ) */
+}	/* TASK( cyclic_task ) */

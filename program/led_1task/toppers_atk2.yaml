@@ -19,23 +19,21 @@ Ecuc:
         OsStartupHook: true
       OsHookStack:
         OsHookStackSize: 0x200
-    led_task:
+    cyclic_task:
       DefinitionRef: OsTask
       OsTaskActivation: 1
       OsTaskPriority: 14
       OsTaskStackSize: 0x250
       OsTaskSchedule: NON
-      OsTaskAutostart:
-        OsTaskAppModeRef: /Ecuc/Os/AppMode1
-    DriveManagerCycAlarm:
+    CyclicTaskCycAlarm:
       DefinitionRef: OsAlarm
       OsAlarmCounterRef: /Ecuc/Os/MAIN_HW_COUNTER
       OsAlarmAction:
         OsAlarmActivateTask:
-          OsAlarmActivateTaskRef: /Ecuc/Os/led_task
+          OsAlarmActivateTaskRef: /Ecuc/Os/cyclic_task
       OsAlarmAutostart:
-        OsAlarmAlarmTime: 800000
-        OsAlarmCycleTime: 800000
+        OsAlarmAlarmTime: 16000000
+        OsAlarmCycleTime: 16000000
         OsAlarmAutostartType: ABSOLUTE
         OsAlarmAppModeRef:
           - /Ecuc/Os/AppMode1
